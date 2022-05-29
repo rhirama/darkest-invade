@@ -42,15 +42,29 @@ public class Hero
     public Hero(HeroBase heroBase, int resolveLevel, int weaponLevel, int armorLevel)
     {
         var weapon = new Weapon(heroBase.Weapons, weaponLevel);
+        var armor = new Armor(heroBase.Armors, armorLevel);
 
         _resolveLevel = resolveLevel;
         _weaponLevel = weaponLevel;
         _armorLevel = armorLevel;
         _base = heroBase;
-        _stats = new Stats(heroBase, weapon);
+        _stats = new Stats(heroBase, weapon, armor);
 
     }
 
+}
+
+public class Armor {
+    public int Level { get; set; }
+    public int MaxHP { get; set; }
+    public int Dodge { get; set; }
+
+    public Armor(ArmorSetBase setBase, int armorLevel){
+        
+        Level = armorLevel;
+        MaxHP = setBase.ArmorSet[armorLevel - 1].MaxHP;
+        Dodge = setBase.ArmorSet[armorLevel - 1].Dodge;
+    }
 }
 
 public class Weapon

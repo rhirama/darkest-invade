@@ -9,8 +9,8 @@ public class Stats
 
     ////Armor
 
-    //public int MaxHP { get; set; }
-    //public int Dodge { get; set; }
+    public int MaxHP { get; set; }
+    public int Dodge { get; set; }
 
     //Weapon
 
@@ -19,7 +19,7 @@ public class Stats
     public int MaxDamage { get; set; }
     public int Speed { get; set; }
 
-    public Stats(HeroBase hero, Weapon weapon)
+    public Stats(HeroBase hero, Weapon weapon, Armor armor)
     {
         Prot = hero.BaseStats.Prot;
         AccMod = hero.BaseStats.AccuracyMod;
@@ -27,6 +27,8 @@ public class Stats
         MinDamage = weapon.MinDamage;
         MaxDamage = weapon.MaxDamage;
         Speed = weapon.Speed;
+        MaxHP = armor.MaxHP;
+        Dodge = armor.Dodge;
     }
 }
 

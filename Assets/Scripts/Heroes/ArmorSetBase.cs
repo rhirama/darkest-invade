@@ -2,17 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmorSetBase : MonoBehaviour
+[CreateAssetMenu(fileName = "Armor Set", menuName = "Darkest Dungeon/Create new Armor")]
+
+public class ArmorSetBase : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [SerializeField] private List<ArmorBase> armorSet;
+
+    public List<ArmorBase> ArmorSet {
+        get {return armorSet;}
+    }
+}
+
+[System.Serializable]
+public class ArmorBase {
+
+    [SerializeField] private string armorName;
+    [SerializeField] private Sprite icon;
+    [SerializeField] private int maxHP;
+    [SerializeField] private int dodge;
+
+    public string ArmorName {
+        get {return armorName;}
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public Sprite Icon {
+        get {return icon;}
+    }
+
+    public int MaxHP {
+        get {return maxHP;}
+    }
+
+    public int Dodge {
+        get {return dodge;}
     }
 }

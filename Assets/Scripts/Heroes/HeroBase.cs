@@ -12,6 +12,7 @@ public class HeroBase : ScriptableObject
     [SerializeField] private Sprite baseSprite;
     [SerializeField] private Sprite icon;
     [SerializeField] private WeaponSetBase weapons;
+    [SerializeField] private ArmorSetBase armors;
 
     [SerializeField] private Resistances _resistances;
 
@@ -49,6 +50,11 @@ public class HeroBase : ScriptableObject
     public Resistances Resistances 
     {
         get { return _resistances; } 
+    }
+
+    public ArmorSetBase Armors 
+    {
+        get {return armors;}
     }
     
 

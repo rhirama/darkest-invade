@@ -23,6 +23,7 @@ MonoBehaviour:
   baseSprite: {fileID: 21300000, guid: 0ef8b288a30f0d442a43a268a676eaf9, type: 3}
   icon: {fileID: 21300000, guid: 6d6af3ce8bbb0b042aa6f03e3e067285, type: 3}
   weapons: {fileID: 11400000, guid: 961c709cbe5913c499c99159dd881774, type: 2}
+  armors: {fileID: 11400000, guid: 0175c51a8e1907641b1d15d7372b0302, type: 2}
   _resistances:
     stun: 40
     blight: 30
