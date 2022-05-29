@@ -6,39 +6,51 @@ using UnityEngine;
 
 public class HeroBase : ScriptableObject
 {
-    [SerializeField] private List<HeroBaseStats> heroBaseStats;
+    [SerializeField] private HeroJob job;
+    [SerializeField] private string _name;
+    [SerializeField] private HeroBaseStats baseStats;
     [SerializeField] private Sprite baseSprite;
     [SerializeField] private Sprite icon;
     [SerializeField] private WeaponSetBase weapons;
-    [SerializeField] private string job;
 
     [SerializeField] private Resistances _resistances;
 
 
-    public string Job
+    public HeroJob Job
     {
         get { return job; }
     }
+
+    public string Name
+    {
+        get { return _name; }
+    }
+
     public Sprite BaseSprite
     {
         get { return baseSprite; }
     }
+
     public Sprite Icon
     {
         get { return icon; }
     }
-    public List<HeroBaseStats> BaseStats
+
+    public HeroBaseStats BaseStats
     {
-        get { return heroBaseStats; }
+        get { return baseStats; }
     }
+
     public WeaponSetBase Weapons
     {
         get { return weapons; }
     }
+
     public Resistances Resistances 
     {
         get { return _resistances; } 
     }
+    
 
 }
 
@@ -49,6 +61,8 @@ public class HeroBaseStats
     [SerializeField] private int prot;
     [SerializeField] private int accuracyMod;
     [SerializeField] private bool religious;
+    [SerializeField] private int moveForwards;
+    [SerializeField] private int moveBackwards;
 
     public int Prot
     {
@@ -64,4 +78,18 @@ public class HeroBaseStats
     {
         get { return religious; }
     }
+
+    public int MoveForwards
+    {
+        get { return moveForwards; }
+    }
+
+    public int MoveBackwards
+    {
+        get { return moveBackwards; }
+    }
 }
+
+public enum HeroJob { Crusader, Hellion, Leper, Vestal, PlagueDoctor}
+
+//public enum HeroJob { Abomination, Antiquarian, Arbalest, BontyHunter, Crusader, GraveRobber, Hellion, Highwayman, Houndmaster, Jester, Leper, ManAtArms, Musketeer, Ocultist, PlagueDoctor, Vestal }

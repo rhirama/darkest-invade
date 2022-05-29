@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9087311e6bff6154fa8963f667c68bdc, type: 3}
-  m_Name: ArbalestBase
+  m_Name: CrusaderBase
   m_EditorClassIdentifier: 
-  heroBaseStats:
-  - prot: 0
+  job: 0
+  _name: Crusader
+  baseStats:
+    prot: 0
     accuracyMod: 0
-    religious: 0
-  - prot: 0
-    accuracyMod: 0
-    religious: 0
-  - prot: 0
-    accuracyMod: 0
-    religious: 0
-  - prot: 0
-    accuracyMod: 0
-    religious: 0
-  - prot: 0
-    accuracyMod: 0
-    religious: 0
-  baseSprite: {fileID: 21300000, guid: 2c428ff45d93ea748a129e9cbdd3284f, type: 3}
-  icon: {fileID: 21300000, guid: 23795429b43c46d4b901fd951cadabec, type: 3}
+    religious: 1
+    moveForwards: 1
+    moveBackwards: 1
+  baseSprite: {fileID: 21300000, guid: 0ef8b288a30f0d442a43a268a676eaf9, type: 3}
+  icon: {fileID: 21300000, guid: 6d6af3ce8bbb0b042aa6f03e3e067285, type: 3}
   weapons: {fileID: 11400000, guid: 961c709cbe5913c499c99159dd881774, type: 2}
-  job: Arbalest
+  _resistances:
+    stun: 40
+    blight: 30
+    disease: 30
+    move: 40
+    bleed: 30
+    debuff: 30
+    deathBlow: 67
+    trap: 10

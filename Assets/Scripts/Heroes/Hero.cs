@@ -10,6 +10,7 @@ public class Hero
     [SerializeField] [Range(1, 5)] private int _weaponLevel;
     [SerializeField] [Range(1, 5)] private int _armorLevel;
     private Stats _stats;
+    private Resistances _resistances;
 
     public HeroBase Base
     {
@@ -31,6 +32,10 @@ public class Hero
     {
         get { return _stats; }
     }
+    public Resistances Resistances
+    {
+        get { return _resistances; }
+    }
 
 
 
@@ -42,7 +47,8 @@ public class Hero
         _weaponLevel = weaponLevel;
         _armorLevel = armorLevel;
         _base = heroBase;
-        _stats = new Stats(weapon);
+        _stats = new Stats(heroBase, weapon);
+
     }
 
 }
