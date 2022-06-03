@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3c57798f9af93439cba5af4fc8cdfe, type: 3}
+  m_Name: LeperWeaponSetBase
+  m_EditorClassIdentifier: 
+  weaponSet:
+  - weaponName: Rusted Executioner's Sword
+    icon: {fileID: 21300000, guid: 1cec50b93793a69419c1b7c1c2c5332b, type: 3}
+    minDamage: 8
+    maxDamage: 16
+    crit: 1
+    speed: 2
+  - weaponName: Heavy Executioner's Sword
+    icon: {fileID: 21300000, guid: 3a46a1d94d8cb91488bd78cc43490924, type: 3}
+    minDamage: 9
+    maxDamage: 18
+    crit: 2
+    speed: 2
+  - weaponName: Sharpened Executioner's Blade
+    icon: {fileID: 21300000, guid: 4f1cf28cbd7520643885a5eae3cc7937, type: 3}
+    minDamage: 10
+    maxDamage: 21
+    crit: 3
+    speed: 3
+  - weaponName: Masterful Executioner's Sword
+    icon: {fileID: 21300000, guid: 5aa2cf9ecd7834040a773ef32424edf9, type: 3}
+    minDamage: 12
+    maxDamage: 23
+    crit: 4
+    speed: 3
+  - weaponName: The Broken Blade
+    icon: {fileID: 21300000, guid: fc5af08b7af67d3408d56f8889471990, type: 3}
+    minDamage: 13
+    maxDamage: 26
+    crit: 5
+    speed: 4

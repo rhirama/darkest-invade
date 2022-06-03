@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79501f4b03cb2ed41813ca12ba3c34a6, type: 3}
+  m_Name: LeperArmorSetBase
+  m_EditorClassIdentifier: 
+  armorSet:
+  - armorName: Battered Chestplate
+    icon: {fileID: 21300000, guid: 18e2d2931b6ea2b4d896134fdf98e1f4, type: 3}
+    maxHP: 35
+    dodge: 0
+  - armorName: Reforged Chestplate
+    icon: {fileID: 21300000, guid: f00c467fa67c8274e97cf666c06c6543, type: 3}
+    maxHP: 42
+    dodge: 5
+  - armorName: Reinforced Chestplate
+    icon: {fileID: 21300000, guid: 070176d67a61f8e4489185c136028dff, type: 3}
+    maxHP: 49
+    dodge: 10
+  - armorName: Bronzed Chestplate
+    icon: {fileID: 21300000, guid: 8477674fe67ff644aa59dfa1fb4d950a, type: 3}
+    maxHP: 56
+    dodge: 15
+  - armorName: Indomitable
+    icon: {fileID: 21300000, guid: 6cb6020af507d124bb7a823423402b22, type: 3}
+    maxHP: 63
+    dodge: 20
