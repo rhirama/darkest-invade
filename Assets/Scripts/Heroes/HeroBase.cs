@@ -65,7 +65,7 @@ public class HeroBase : ScriptableObject
 public class HeroBaseStats
 {
     [SerializeField] private int prot;
-    [SerializeField] private int accuracyMod;
+    [SerializeField] private float accuracyMod;
     [SerializeField] private bool religious;
     [SerializeField] private int moveForwards;
     [SerializeField] private int moveBackwards;
@@ -75,7 +75,7 @@ public class HeroBaseStats
         get { return prot; }
     }
 
-    public int AccuracyMod
+    public float AccuracyMod
     {
         get { return accuracyMod; }
     }

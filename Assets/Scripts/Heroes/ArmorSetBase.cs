@@ -19,7 +19,7 @@ public class ArmorBase {
     [SerializeField] private string armorName;
     [SerializeField] private Sprite icon;
     [SerializeField] private int maxHP;
-    [SerializeField] private int dodge;
+    [SerializeField] private float dodge;
 
     public string ArmorName {
         get {return armorName;}
@@ -33,7 +33,7 @@ public class ArmorBase {
         get {return maxHP;}
     }
 
-    public int Dodge {
+    public float Dodge {
         get {return dodge;}
     }
 }

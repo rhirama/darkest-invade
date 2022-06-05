@@ -27,9 +27,11 @@ public class SkillBase {
     [SerializeField] private List<int> rank;
     [SerializeField] private Target target;
     [SerializeField] private List<int> targetRank;
-    [SerializeField] private int damage;
-    [SerializeField] private int accuracy;
-    [SerializeField] private int critMod;
+    [SerializeField] private int damageMod;
+    [SerializeField] private float accuracy;
+    [SerializeField] private float critMod;
+    [SerializeField] private int minDamage;
+    [SerializeField] private int maxDamage;
 
     public string SkillName {
         get {return skillName;}
@@ -55,16 +57,22 @@ public class SkillBase {
         get {return targetRank;}
     }
 
-    public int Damage {
-        get {return damage;}
+    public int DamageMod {
+        get {return damageMod;}
     }
 
-    public int Accuracy {
+    public float Accuracy {
         get {return accuracy;}
     }
 
-    public int CritMod {
+    public float CritMod {
         get {return critMod;}
     }
+
+    public int MinDamage {
+        get => minDamage; }
+    
+    public int MaxDamage { 
+        get => maxDamage; }
 }
 

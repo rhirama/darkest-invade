@@ -21,7 +21,7 @@ public class WeaponBase
     [SerializeField] private Sprite icon;
     [SerializeField] private int minDamage;
     [SerializeField] private int maxDamage;
-    [SerializeField] private int crit;
+    [SerializeField] private float crit;
     [SerializeField] private int speed;
 
     public string WeaponName
@@ -43,7 +43,7 @@ public class WeaponBase
     {
         get { return maxDamage; }
     }
-    public int Crit
+    public float Crit
     {
         get { return crit; }
     }

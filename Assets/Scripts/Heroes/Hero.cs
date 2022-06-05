@@ -57,7 +57,7 @@ public class Hero
 public class Armor {
     public int Level { get; set; }
     public int MaxHP { get; set; }
-    public int Dodge { get; set; }
+    public float Dodge { get; set; }
 
     public Armor(ArmorSetBase setBase, int armorLevel){
         
@@ -72,7 +72,7 @@ public class Weapon
     public int Level { get; set; }
     public int MinDamage { get; set; }
     public int MaxDamage { get; set; }
-    public int Crit { get; set; }
+    public float Crit { get; set; }
     public int Speed { get; set; }
 
     public Weapon(WeaponSetBase setBase, int weaponLevel)
