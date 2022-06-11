@@ -5,21 +5,21 @@ using UnityEngine;
 public class Stats
 {
     public int Prot { get; set; }
-    public int AccMod { get; set; }
+    public float AccMod { get; set; }
 
     ////Armor
 
-    //public int MaxHP { get; set; }
-    //public int Dodge { get; set; }
+    public int MaxHP { get; set; }
+    public float Dodge { get; set; }
 
     //Weapon
 
-    public int Crit { get; set; }
+    public float Crit { get; set; }
     public int MinDamage { get; set; }
     public int MaxDamage { get; set; }
     public int Speed { get; set; }
 
-    public Stats(HeroBase hero, Weapon weapon)
+    public Stats(HeroBase hero, Weapon weapon, Armor armor)
     {
         Prot = hero.BaseStats.Prot;
         AccMod = hero.BaseStats.AccuracyMod;
@@ -27,6 +27,18 @@ public class Stats
         MinDamage = weapon.MinDamage;
         MaxDamage = weapon.MaxDamage;
         Speed = weapon.Speed;
+        MaxHP = armor.MaxHP;
+        Dodge = armor.Dodge;
+    }
+    
+    public Stats(EnemyBase enemy, int level)
+    {
+        MaxHP = enemy.BaseStats[level].MaxHP;
+        Prot = enemy.BaseStats[level].Prot;
+        AccMod = enemy.BaseStats[level].AccuracyMod;
+        Dodge = enemy.BaseStats[level].Dodge;
+        Crit = 0;
+        Speed = enemy.BaseStats[level].Speed;
     }
 }
 

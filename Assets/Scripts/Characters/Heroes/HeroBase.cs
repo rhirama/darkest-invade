@@ -12,6 +12,8 @@ public class HeroBase : ScriptableObject
     [SerializeField] private Sprite baseSprite;
     [SerializeField] private Sprite icon;
     [SerializeField] private WeaponSetBase weapons;
+    [SerializeField] private ArmorSetBase armors;
+    [SerializeField] private List<SkillBaseSO> skillSet;
 
     [SerializeField] private Resistances _resistances;
 
@@ -50,8 +52,16 @@ public class HeroBase : ScriptableObject
     {
         get { return _resistances; } 
     }
-    
 
+    public ArmorSetBase Armors 
+    {
+        get {return armors; }
+    }
+
+    public List<SkillBaseSO> SkillSet 
+    {
+        get {return skillSet; } 
+    }
 }
 
 
@@ -59,7 +69,7 @@ public class HeroBase : ScriptableObject
 public class HeroBaseStats
 {
     [SerializeField] private int prot;
-    [SerializeField] private int accuracyMod;
+    [SerializeField] private float accuracyMod;
     [SerializeField] private bool religious;
     [SerializeField] private int moveForwards;
     [SerializeField] private int moveBackwards;
@@ -69,7 +79,7 @@ public class HeroBaseStats
         get { return prot; }
     }
 
-    public int AccuracyMod
+    public float AccuracyMod
     {
         get { return accuracyMod; }
     }

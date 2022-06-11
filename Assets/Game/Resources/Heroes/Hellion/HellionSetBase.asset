@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3c57798f9af93439cba5af4fc8cdfe, type: 3}
+  m_Name: HellionSetBase
+  m_EditorClassIdentifier: 
+  weaponSet:
+  - weaponName: Primitive Glaive
+    icon: {fileID: 21300000, guid: 9b73f47643e735e478729e60adb75d31, type: 3}
+    minDamage: 6
+    maxDamage: 12
+    crit: 5
+    speed: 4
+  - weaponName: Reinforced Glaive
+    icon: {fileID: 21300000, guid: 154a0dfb8791cbc449273a0e9c6a6053, type: 3}
+    minDamage: 7
+    maxDamage: 14
+    crit: 6
+    speed: 4
+  - weaponName: Resilient Glaive
+    icon: {fileID: 21300000, guid: 53436bf3759608045b9e56bdd589bdc9, type: 3}
+    minDamage: 8
+    maxDamage: 16
+    crit: 7
+    speed: 5
+  - weaponName: Battle-Tested Glaive
+    icon: {fileID: 21300000, guid: f17d726d7c6df614198c120dc9f86455, type: 3}
+    minDamage: 9
+    maxDamage: 17
+    crit: 8
+    speed: 5
+  - weaponName: The Wolf's Tooth
+    icon: {fileID: 21300000, guid: 74903e741006c4546b5c6855b023ba48, type: 3}
+    minDamage: 10
+    maxDamage: 19
+    crit: 9
+    speed: 6

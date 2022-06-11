@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3c57798f9af93439cba5af4fc8cdfe, type: 3}
+  m_Name: PlagueDoctorWeaponSetBase
+  m_EditorClassIdentifier: 
+  weaponSet:
+  - weaponName: Crude Sachets
+    icon: {fileID: 21300000, guid: 6ddd8ec783d153a4f93256f594acf58b, type: 3}
+    minDamage: 4
+    maxDamage: 7
+    crit: 2
+    speed: 7
+  - weaponName: Crafted Sachets
+    icon: {fileID: 21300000, guid: 614dfbb8835308d47bcd105f134f40e0, type: 3}
+    minDamage: 5
+    maxDamage: 8
+    crit: 3
+    speed: 7
+  - weaponName: Diseased Sachets
+    icon: {fileID: 21300000, guid: b7e4071b76addb7418e1cce111318b63, type: 3}
+    minDamage: 6
+    maxDamage: 10
+    crit: 4
+    speed: 8
+  - weaponName: Toxic Grenades
+    icon: {fileID: 21300000, guid: 4382d97179ccfe74c9d2ed88a953cfa1, type: 3}
+    minDamage: 6
+    maxDamage: 11
+    crit: 5
+    speed: 8
+  - weaponName: The Bubonic Herald
+    icon: {fileID: 21300000, guid: 4a83b8f6644853c4f9354f2a45d69cf5, type: 3}
+    minDamage: 7
+    maxDamage: 13
+    crit: 6
+    speed: 9

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9087311e6bff6154fa8963f667c68bdc, type: 3}
+  m_Name: PlagueDoctorBase
+  m_EditorClassIdentifier: 
+  job: 4
+  _name: Plague Doctor
+  baseStats:
+    prot: 0
+    accuracyMod: 0
+    religious: 0
+    moveForwards: 1
+    moveBackwards: 1
+  baseSprite: {fileID: 21300000, guid: 803f6865f01b3a34f8d29e21a651c33e, type: 3}
+  icon: {fileID: 21300000, guid: 846e83e2159ad5949908bfbd0ca7fb48, type: 3}
+  weapons: {fileID: 11400000, guid: f4709561e3ae1d44aad460bdd185a97d, type: 2}
+  armors: {fileID: 11400000, guid: 2c12be092a6a99c4e91b13429e9fe76f, type: 2}
+  _resistances:
+    stun: 20
+    blight: 60
+    disease: 50
+    move: 20
+    bleed: 20
+    debuff: 50
+    deathBlow: 67
+    trap: 20
