@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c3c57798f9af93439cba5af4fc8cdfe, type: 3}
+  m_Name: VestalWeaponSetBase
+  m_EditorClassIdentifier: 
+  weaponSet:
+  - weaponName: Rusted Mace
+    icon: {fileID: 21300000, guid: d8c0ddf2f7328764d8b0061a70f17d08, type: 3}
+    minDamage: 4
+    maxDamage: 8
+    crit: 1
+    speed: 4
+  - weaponName: Steady Mace
+    icon: {fileID: 21300000, guid: d7d9b547d9ea78f47885cf49b8349b3f, type: 3}
+    minDamage: 5
+    maxDamage: 10
+    crit: 2
+    speed: 4
+  - weaponName: Stalwart Mace
+    icon: {fileID: 21300000, guid: cb0020ef6fb85e04b991b75a3eb82931, type: 3}
+    minDamage: 6
+    maxDamage: 11
+    crit: 3
+    speed: 5
+  - weaponName: Gilded Mace
+    icon: {fileID: 21300000, guid: 9e06a69d953da4b4f84d0e1d70d061be, type: 3}
+    minDamage: 6
+    maxDamage: 13
+    crit: 4
+    speed: 5
+  - weaponName: The Hand of Light
+    icon: {fileID: 21300000, guid: 1a4d7ceb67224b94288a311c8cac5080, type: 3}
+    minDamage: 7
+    maxDamage: 14
+    crit: 5
+    speed: 6

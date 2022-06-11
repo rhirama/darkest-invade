@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9087311e6bff6154fa8963f667c68bdc, type: 3}
+  m_Name: HellionBase
+  m_EditorClassIdentifier: 
+  job: 1
+  _name: Hellion
+  baseStats:
+    prot: 0
+    accuracyMod: 0
+    religious: 0
+    moveForwards: 1
+    moveBackwards: 0
+  baseSprite: {fileID: 21300000, guid: acca636dac0a0554f9dd4310b46f4cf4, type: 3}
+  icon: {fileID: 21300000, guid: ec12b18f2a28ce3479ba005b07bd0ac5, type: 3}
+  weapons: {fileID: 11400000, guid: 34afbdb2e167f754db5d51d4c332012d, type: 2}
+  armors: {fileID: 11400000, guid: 01ff9ab89c3efc240875e1473bf88637, type: 2}
+  _resistances:
+    stun: 40
+    blight: 40
+    disease: 30
+    move: 40
+    bleed: 40
+    debuff: 30
+    deathBlow: 67
+    trap: 20

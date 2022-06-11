@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9087311e6bff6154fa8963f667c68bdc, type: 3}
+  m_Name: CrusaderBase
+  m_EditorClassIdentifier: 
+  job: 0
+  _name: Crusader
+  baseStats:
+    prot: 0
+    accuracyMod: 0
+    religious: 1
+    moveForwards: 1
+    moveBackwards: 1
+  baseSprite: {fileID: 21300000, guid: 0ef8b288a30f0d442a43a268a676eaf9, type: 3}
+  icon: {fileID: 21300000, guid: 6d6af3ce8bbb0b042aa6f03e3e067285, type: 3}
+  weapons: {fileID: 11400000, guid: 961c709cbe5913c499c99159dd881774, type: 2}
+  armors: {fileID: 11400000, guid: 0175c51a8e1907641b1d15d7372b0302, type: 2}
+  skillSet:
+  - {fileID: 11400000, guid: 53b9edd14d4259b489a9a2407ed72d2e, type: 2}
+  - {fileID: 11400000, guid: c142a9f1124f72d4c8a4f63dbc7bfe28, type: 2}
+  - {fileID: 11400000, guid: f9ef752bd4dd224459a286b203f2cc5d, type: 2}
+  - {fileID: 11400000, guid: 5aaca9ba78b2248409b424b114d4748b, type: 2}
+  _resistances:
+    stun: 40
+    blight: 30
+    disease: 30
+    move: 40
+    bleed: 30
+    debuff: 30
+    deathBlow: 67
+    trap: 10
