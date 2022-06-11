@@ -24,6 +24,11 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 6d6af3ce8bbb0b042aa6f03e3e067285, type: 3}
   weapons: {fileID: 11400000, guid: 961c709cbe5913c499c99159dd881774, type: 2}
   armors: {fileID: 11400000, guid: 0175c51a8e1907641b1d15d7372b0302, type: 2}
+  skillSet:
+  - {fileID: 11400000, guid: 53b9edd14d4259b489a9a2407ed72d2e, type: 2}
+  - {fileID: 11400000, guid: c142a9f1124f72d4c8a4f63dbc7bfe28, type: 2}
+  - {fileID: 11400000, guid: f9ef752bd4dd224459a286b203f2cc5d, type: 2}
+  - {fileID: 11400000, guid: 5aaca9ba78b2248409b424b114d4748b, type: 2}
   _resistances:
     stun: 40
     blight: 30

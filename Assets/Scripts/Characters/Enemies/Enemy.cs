@@ -8,7 +8,7 @@ public class Enemy
 {
     [SerializeField] private EnemyBase _base;
     [SerializeField][Range(0, 2)] private int _level;
-    [SerializeField] private SkillSetBase _skillSet;
+    [SerializeField] private List<SkillBaseSO> _skillSet;
 
     private Stats _stats;
     private Resistances _resistances;
@@ -16,7 +16,7 @@ public class Enemy
     public int Level { get => _level; }
     public Stats Stats { get => _stats; }
     public Resistances Resistances { get => _resistances; }
-    public SkillSetBase SkillSet { get => _skillSet; }
+    public List<SkillBaseSO> SkillSet { get => _skillSet; }
 
     public Enemy(EnemyBase enemyBase, int level)
     {
@@ -29,7 +29,12 @@ public class Enemy
         _stats = stats;
         _resistances = resistances;
 
-        var skillSet = enemyBase.SkillSets[level];
+        var skillSet = new List<SkillBaseSO>();
+
+        foreach (EnemySkillDatabase skill in enemyBase.SkillSet)
+        {
+            skillSet.Add(skill.SkillDatabase[level]);
+        }
 
         _skillSet = skillSet;
     }

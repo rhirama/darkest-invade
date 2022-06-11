@@ -9,6 +9,10 @@ public class Hero
     [SerializeField] [Range(1, 5)] private int _resolveLevel;
     [SerializeField] [Range(1, 5)] private int _weaponLevel;
     [SerializeField] [Range(1, 5)] private int _armorLevel;
+
+    [SerializeField] private List<SkillBaseSO> _skillSet;
+    [SerializeField] private List<int> _skillLevel;
+
     private Stats _stats;
     private Resistances _resistances;
 
@@ -36,15 +40,27 @@ public class Hero
     {
         get { return _resistances; }
     }
-
-
+    public List<int> SkillLevel { get => _skillLevel; }
+    public List<SkillBaseSO> SkillSet { get => _skillSet; }
 
     public Hero(HeroBase heroBase, int resolveLevel, int weaponLevel, int armorLevel)
     {
         var weapon = new Weapon(heroBase.Weapons, weaponLevel);
         var armor = new Armor(heroBase.Armors, armorLevel);
 
-        _resolveLevel = resolveLevel;
+        var skillSet = new List<SkillBaseSO>();
+
+        foreach (SkillBaseSO skillBase in heroBase.SkillSet)
+        {
+            var skill = new SkillBaseSO();
+
+            skill = skill.SetSkillLevel(skillBase, resolveLevel);
+
+            skillSet.Add(skill);
+        }
+
+        _skillSet = skillSet;
+
         _weaponLevel = weaponLevel;
         _armorLevel = armorLevel;
         _base = heroBase;

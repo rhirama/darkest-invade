@@ -58,7 +58,12 @@ MonoBehaviour:
   enemyType: 3
   size: 1
   actionsPerRound: 1
-  skillSets:
-  - {fileID: 11400000, guid: adb577a147c9ce34b97a5ad3d9c516f0, type: 2}
-  - {fileID: 11400000, guid: 1d85b80a3c2684e488f9bc20e5f34c3d, type: 2}
-  - {fileID: 11400000, guid: 3a6963b3de2806347af709f28caa0004, type: 2}
+  skillSet:
+  - skillDatabase:
+    - {fileID: 11400000, guid: 970272cb52114b845b20e357517c1881, type: 2}
+    - {fileID: 11400000, guid: 52ceee41cb30d334794f8f67fd0f3c3e, type: 2}
+    - {fileID: 11400000, guid: d252737a839901d4f8fc203f9355c1d2, type: 2}
+  - skillDatabase:
+    - {fileID: 11400000, guid: 27952f8e9b4adf3429466f7153fe91b8, type: 2}
+    - {fileID: 11400000, guid: e44cd3211e9613842b233f19ce4509f5, type: 2}
+    - {fileID: 11400000, guid: b345112034f2d864c926ff8f38bffc01, type: 2}
