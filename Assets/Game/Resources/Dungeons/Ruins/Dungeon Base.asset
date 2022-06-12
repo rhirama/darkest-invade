@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a3c9e191ea957468f3fcdf5fafd635, type: 3}
+  m_Name: Dungeon Base
+  m_EditorClassIdentifier: 
+  _biome: Ruins
+  difficulty: 0
+  size: 0
+  objective: 0
+  trinketOdds: 0
+  encounterOdds: 0

@@ -9,9 +9,9 @@ public class TrinketBase : ScriptableObject
     [SerializeField] string _name;
     [SerializeField] [Range(0, 4)] int rarity;
     [SerializeField] HeroJob classRestriction;
-    [SerializeField] Dungeon dropLocation;
+   //[SerializeField] Dungeon dropLocation;
     [SerializeField] List<StatsBoost> effects;
 }
 
 
-public enum Dungeon { Ruins, Warrens, Weald, Cove, DarkestDungeon }
+//public enum Dungeon { Ruins, Warrens, Weald, Cove, DarkestDungeon }
