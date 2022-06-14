@@ -7,7 +7,6 @@ using UnityEngine;
 public class HeroBase : ScriptableObject
 {
     [SerializeField] private HeroJob job;
-    [SerializeField] private string _name;
     [SerializeField] private HeroBaseStats baseStats;
     [SerializeField] private Sprite baseSprite;
     [SerializeField] private Sprite icon;
@@ -17,51 +16,23 @@ public class HeroBase : ScriptableObject
 
     [SerializeField] private Resistances _resistances;
 
+    #region Properties
+    public HeroJob Job { get => job; }
 
-    public HeroJob Job
-    {
-        get { return job; }
-    }
+    public Sprite BaseSprite { get => baseSprite; }
 
-    public string Name
-    {
-        get { return _name; }
-    }
+    public Sprite Icon { get => icon; }
 
-    public Sprite BaseSprite
-    {
-        get { return baseSprite; }
-    }
+    public HeroBaseStats BaseStats { get => baseStats; }
 
-    public Sprite Icon
-    {
-        get { return icon; }
-    }
+    public WeaponSetBase Weapons { get => weapons; }
 
-    public HeroBaseStats BaseStats
-    {
-        get { return baseStats; }
-    }
+    public Resistances Resistances { get => _resistances; }
 
-    public WeaponSetBase Weapons
-    {
-        get { return weapons; }
-    }
+    public ArmorSetBase Armors { get => armors; }
 
-    public Resistances Resistances 
-    {
-        get { return _resistances; } 
-    }
-
-    public ArmorSetBase Armors 
-    {
-        get {return armors; }
-    }
-
-    public List<SkillBaseSO> SkillSet 
-    {
-        get {return skillSet; } 
-    }
+    public List<SkillBaseSO> SkillSet { get => skillSet; }
+    #endregion
 }
 
 
@@ -74,30 +45,17 @@ public class HeroBaseStats
     [SerializeField] private int moveForwards;
     [SerializeField] private int moveBackwards;
 
-    public int Prot
-    {
-        get { return prot; }
-    }
+    #region Properties
+    public int Prot { get => prot; }
 
-    public float AccuracyMod
-    {
-        get { return accuracyMod; }
-    }
+    public float AccuracyMod { get => accuracyMod; }
 
-    public bool Religious
-    {
-        get { return religious; }
-    }
+    public bool Religious { get => religious; }
 
-    public int MoveForwards
-    {
-        get { return moveForwards; }
-    }
+    public int MoveForwards { get => moveForwards; }
 
-    public int MoveBackwards
-    {
-        get { return moveBackwards; }
-    }
+    public int MoveBackwards { get => moveBackwards; }
+    #endregion
 }
 
 public enum HeroJob { Crusader, Hellion, Leper, Vestal, PlagueDoctor}

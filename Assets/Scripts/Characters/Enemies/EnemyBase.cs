@@ -15,14 +15,23 @@ public class EnemyBase : ScriptableObject
     [SerializeField] private int actionsPerRound;
     [SerializeField] private List<EnemySkillDatabase> skillSet;
 
+    #region Properties
     public string EnemyName { get => enemyName; }
+
     public List<EnemyBaseStats> BaseStats { get => baseStats; }
+
     public Sprite BaseSprite { get => baseSprite; }
+
     public List<Resistances> Resistances { get => _resistances; }
+
     public EnemyType EnemyType { get => enemyType; }
+
     public int Size { get => size; }
+
     public int ActionsPerRound { get => actionsPerRound; }
+
     public List<EnemySkillDatabase> SkillSet { get => skillSet; }
+    #endregion
 }
 
 [System.Serializable]
@@ -34,6 +43,7 @@ public class EnemyBaseStats
     [SerializeField] private float dodge;
     [SerializeField] private int speed;
 
+    #region Properties
     public int MaxHP { get => maxHP; }
 
     public int Prot { get => prot; }
@@ -43,6 +53,7 @@ public class EnemyBaseStats
     public float Dodge { get => dodge; }
 
     public int Speed { get => speed; }
+    #endregion
 }
 
 public enum EnemyType { Human, Eldritch, Beast, Unholy, Stonework }
@@ -52,10 +63,5 @@ public class EnemySkillDatabase
 {
     [SerializeField] private List<SkillBaseSO> skillDatabase;
 
-    public List<SkillBaseSO> SkillDatabase
-    {
-        get { return skillDatabase; }
-    }
-
-
+    public List<SkillBaseSO> SkillDatabase { get => skillDatabase; }
 }

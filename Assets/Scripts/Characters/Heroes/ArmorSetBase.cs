@@ -8,9 +8,7 @@ public class ArmorSetBase : ScriptableObject
 {
     [SerializeField] private List<ArmorBase> armorSet;
 
-    public List<ArmorBase> ArmorSet {
-        get {return armorSet;}
-    }
+    public List<ArmorBase> ArmorSet { get => armorSet;}
 }
 
 [System.Serializable]
@@ -21,19 +19,11 @@ public class ArmorBase {
     [SerializeField] private int maxHP;
     [SerializeField] private float dodge;
 
-    public string ArmorName {
-        get {return armorName;}
-    }
+    public string ArmorName { get => armorName; }
 
-    public Sprite Icon {
-        get {return icon;}
-    }
+    public Sprite Icon { get => icon; }
 
-    public int MaxHP {
-        get {return maxHP;}
-    }
+    public int MaxHP { get => maxHP; }
 
-    public float Dodge {
-        get {return dodge;}
-    }
+    public float Dodge { get => dodge;}
 }

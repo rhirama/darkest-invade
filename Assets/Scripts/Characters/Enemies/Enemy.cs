@@ -12,11 +12,18 @@ public class Enemy
 
     private Stats _stats;
     private Resistances _resistances;
+
+    #region Properties
     public EnemyBase Base { get => _base; }
+
     public int Level { get => _level; }
+
     public Stats Stats { get => _stats; }
+
     public Resistances Resistances { get => _resistances; }
+
     public List<SkillBaseSO> SkillSet { get => _skillSet; }
+    #endregion
 
     public Enemy(EnemyBase enemyBase, int level)
     {

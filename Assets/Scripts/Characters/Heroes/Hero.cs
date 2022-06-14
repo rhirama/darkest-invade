@@ -5,69 +5,67 @@ using UnityEngine;
 [System.Serializable]
 public class Hero
 {
-    [SerializeField] private HeroBase _base;
-    [SerializeField] [Range(1, 5)] private int _resolveLevel;
-    [SerializeField] [Range(1, 5)] private int _weaponLevel;
-    [SerializeField] [Range(1, 5)] private int _armorLevel;
+    [SerializeField] private string heroName;
+    [SerializeField] private HeroBase heroBase;
+    [SerializeField] [Range(1, 5)] private int resolveLevel;
+    [SerializeField] [Range(1, 5)] private int weaponLevel;
+    [SerializeField] [Range(1, 5)] private int armorLevel;
 
-    [SerializeField] private List<SkillBaseSO> _skillSet;
-    [SerializeField] private List<int> _skillLevel;
+    [SerializeField] private List<SkillBaseSO> skillSet;
+    [SerializeField] private List<int> skillLevel;
 
-    private Stats _stats;
-    private Resistances _resistances;
+    private int hp;
+    private int stress;
 
-    public HeroBase Base
-    {
-        get { return _base; }
-    }
-    public int ResolveLevel
-    {
-        get { return _resolveLevel; }
-    }
-    public int WeaponLevel
-    {
-        get { return _weaponLevel; }
-    }
-    public int ArmorLevel
-    {
-        get { return _armorLevel; }
-    }
-    public Stats Stats
-    {
-        get { return _stats; }
-    }
-    public Resistances Resistances
-    {
-        get { return _resistances; }
-    }
-    public List<int> SkillLevel { get => _skillLevel; }
-    public List<SkillBaseSO> SkillSet { get => _skillSet; }
+    private Stats stats;
+    private Resistances resistances;
 
-    public Hero(HeroBase heroBase, int resolveLevel, int weaponLevel, int armorLevel)
-    {
-        var weapon = new Weapon(heroBase.Weapons, weaponLevel);
-        var armor = new Armor(heroBase.Armors, armorLevel);
+    #region Properties
+    public HeroBase Base { get => heroBase; }
 
+    public string Name { get => heroName; set => heroName = value; }
+
+    public int ResolveLevel { get => resolveLevel; }
+    
+    public int WeaponLevel { get => weaponLevel; }
+    
+    public int ArmorLevel { get => armorLevel; }
+    
+    public Stats Stats { get => stats; }
+    
+    public Resistances Resistances { get => resistances; }
+    
+    public List<int> SkillLevel { get => skillLevel; }
+
+    public List<SkillBaseSO> SkillSet { get => skillSet; }
+
+    public int Hp { get => hp; set => hp = value; }
+
+    public int Stress { get => stress; set => stress = value; }
+    #endregion
+
+    public Hero(HeroBase hBase, int resolveLevel, int weaponLevel, int armorLevel)
+    {
+        var weapon = new Weapon(hBase.Weapons, weaponLevel);
+        var armor = new Armor(hBase.Armors, armorLevel);
         var skillSet = new List<SkillBaseSO>();
 
-        foreach (SkillBaseSO skillBase in heroBase.SkillSet)
+        foreach (SkillBaseSO skillBase in hBase.SkillSet)
         {
             var skill = new SkillBaseSO();
-
             skill = skill.SetSkillLevel(skillBase, resolveLevel);
-
             skillSet.Add(skill);
         }
 
-        _skillSet = skillSet;
+        this.skillSet = skillSet;
+        this.weaponLevel = weaponLevel;
+        this.armorLevel = armorLevel;
+        this.heroBase = hBase;
+        this.stats = new Stats(hBase, weapon, armor);
 
-        _weaponLevel = weaponLevel;
-        _armorLevel = armorLevel;
-        _base = heroBase;
-        _stats = new Stats(heroBase, weapon, armor);
-
+        this.hp = stats.MaxHP;
+        this.stress = 0;
     }
-
 }
 
 public class Armor {

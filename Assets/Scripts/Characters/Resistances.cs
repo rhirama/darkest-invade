@@ -14,28 +14,32 @@ public class Resistances
     [SerializeField] private int deathBlow;
     [SerializeField] private int trap;
 
-    ////Resistance
+    #region Properties
     public int Stun { get; set; }
+
     public int Blight { get; set; }
+
     public int Disease { get; set; }
+
     public int Move { get; set; }
+
     public int Bleed { get; set; }
+
     public int Debuff { get; set; }
+
     public int DeathBlow { get; set; }
+
     public int Trap { get; set; }
+    #endregion
 
-    public Resistances setResistances(Resistances baseResistances, int resolveLevel)
+    public void levelResistances(int levelUp)
     {
-        var newResistances = new Resistances();
-        newResistances.Stun = baseResistances.Stun + (resolveLevel * 10);
-        newResistances.Blight = baseResistances.Blight + (resolveLevel * 10);
-        newResistances.Disease = baseResistances.Disease + (resolveLevel * 10);
-        newResistances.Move = baseResistances.Move + (resolveLevel * 10);
-        newResistances.Debuff = baseResistances.Debuff + (resolveLevel * 10);
-        newResistances.DeathBlow = baseResistances.DeathBlow + (resolveLevel * 10);
-        newResistances.Trap = baseResistances.Trap + (resolveLevel * 10);
-
-        return newResistances;
+        this.Stun += (levelUp * 10);
+        this.Blight += (levelUp * 10);
+        this.Disease += (levelUp * 10);
+        this.Move += (levelUp * 10);
+        this.Debuff += (levelUp * 10);
+        this.DeathBlow += (levelUp * 10);
+        this.Trap += (levelUp * 10);
     }
-
 }

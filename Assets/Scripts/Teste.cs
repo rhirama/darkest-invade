@@ -10,24 +10,21 @@ public class Teste : MonoBehaviour
     [SerializeField][Range(1, 5)] private int resolveLevel;
     [SerializeField][Range(1, 5)] private int weaponLevel;
     [SerializeField][Range(1, 5)] private int armorLevel;
+
+    [SerializeField] private HeroPanelUI heroPanel;
+
     private SpriteRenderer image;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
+    {
+        HandleUpdate();
+    }
+
+    public void HandleUpdate()
     {
         testHero = new Hero(_base, resolveLevel, weaponLevel, armorLevel);
 
-        image = GetComponent<SpriteRenderer>();
-
-        Debug.Log(testHero.ResolveLevel);
-        image.sprite = testHero.Base.BaseSprite;
-
+        heroPanel.SetHeroPanel(testHero);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-
-    }
 }

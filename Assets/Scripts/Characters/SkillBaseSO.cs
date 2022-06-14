@@ -21,52 +21,30 @@ public class SkillBaseSO : ScriptableObject
     [SerializeField] private int minDamage;
     [SerializeField] private int maxDamage;
 
-    public string SkillName
-    {
-        get { return skillName; }
-    }
 
-    public Sprite Icon
-    {
-        get { return icon; }
-    }
+    #region Properties
+    public string SkillName { get => skillName; }
 
-    public Range Range
-    {
-        get { return range; }
-    }
+    public Sprite Icon { get => icon; }
 
-    public List<int> Rank
-    {
-        get { return rank; }
-    }
+    public Range Range { get => range; }
 
-    public Target Target
-    {
-        get { return target; }
-    }
+    public List<int> Rank { get => rank; }
 
-    public List<int> TargetRank
-    {
-        get { return targetRank; }
-    }
+    public Target Target { get => target; }
 
-    public int DamageMod
-    {
-        get => damageMod;
-    }
+    public List<int> TargetRank { get => targetRank; }
+
+    public int DamageMod { get => damageMod; }
+
     public float Accuracy { get => accuracy; set => accuracy = value; }
+
     public float CritMod { get => critMod; set => critMod = value; }
 
-    public int MinDamage
-    {
-        get => minDamage;
-    }
+    public int MinDamage { get => minDamage; }
 
-    public int MaxDamage
-    {
-        get => maxDamage;
-    }
+    public int MaxDamage { get => maxDamage; }
+    #endregion
 
     public SkillBaseSO SetSkillLevel(SkillBaseSO skillBase, int level)
     {

@@ -8,10 +8,7 @@ public class WeaponSetBase : ScriptableObject
 {
     [SerializeField] private List<WeaponBase> weaponSet;
 
-    public List<WeaponBase> WeaponSet
-    {
-        get { return weaponSet; }
-    }
+    public List<WeaponBase> WeaponSet { get => weaponSet; }
 }
 
 [System.Serializable]
@@ -24,34 +21,15 @@ public class WeaponBase
     [SerializeField] private float crit;
     [SerializeField] private int speed;
 
-    public string WeaponName
-    {
-        get { return weaponName; }
-    }
+    public string WeaponName { get => weaponName; }
 
-    public Sprite Icon
-    {
-        get { return icon; }
-    }
+    public Sprite Icon { get => icon; }
 
-    public int MinDamage
-    {
-        get { return minDamage; }
-    }
+    public int MinDamage { get => minDamage; }
 
-    public int MaxDamage
-    {
-        get { return maxDamage; }
+    public int MaxDamage { get { return maxDamage; }
     }
-    public float Crit
-    {
-        get { return crit; }
-    }
+    public float Crit { get => crit; }
 
-    public int Speed
-    {
-        get { return speed; }
-    }
-
-
+    public int Speed { get => speed; }
 }

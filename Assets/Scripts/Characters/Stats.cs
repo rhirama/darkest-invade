@@ -7,18 +7,17 @@ public class Stats
     public int Prot { get; set; }
     public float AccMod { get; set; }
 
-    ////Armor
-
+    // Armor
     public int MaxHP { get; set; }
     public float Dodge { get; set; }
 
-    //Weapon
-
+    // Weapon
     public float Crit { get; set; }
     public int MinDamage { get; set; }
     public int MaxDamage { get; set; }
     public int Speed { get; set; }
 
+    // Construtor dos status do heroi
     public Stats(HeroBase hero, Weapon weapon, Armor armor)
     {
         Prot = hero.BaseStats.Prot;
@@ -31,6 +30,7 @@ public class Stats
         Dodge = armor.Dodge;
     }
     
+    // Construtor dos satatus do inimigo
     public Stats(EnemyBase enemy, int level)
     {
         MaxHP = enemy.BaseStats[level].MaxHP;
