@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Armor Set", menuName = "Darkest Dungeon/Create new Armor")]
 
-public class ArmorSetBase : ScriptableObject
+public class ArmorSetBaseSO : ScriptableObject
 {
     [SerializeField] private List<ArmorBase> armorSet;
 

@@ -10,5 +10,6 @@ public class ButtonTest : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         teste.HandleUpdate();
+        teste.testHero.CheckSkills();
     }
 }

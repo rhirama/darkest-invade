@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Weapon Set", menuName = "Darkest Dungeon/Create new Weapon", order = 0)]
 
-public class WeaponSetBase : ScriptableObject
+public class WeaponSetBaseSO : ScriptableObject
 {
     [SerializeField] private List<WeaponBase> weaponSet;
 

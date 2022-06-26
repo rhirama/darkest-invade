@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Teste : MonoBehaviour
 {
-    [SerializeField] Hero testHero;
-    [SerializeField] private HeroBase _base;
+    [SerializeField] public Hero testHero;
+    [SerializeField] private HeroBaseSO _base;
     [SerializeField][Range(1, 5)] private int resolveLevel;
     [SerializeField][Range(1, 5)] private int weaponLevel;
     [SerializeField][Range(1, 5)] private int armorLevel;

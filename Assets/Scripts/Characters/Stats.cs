@@ -18,7 +18,7 @@ public class Stats
     public int Speed { get; set; }
 
     // Construtor dos status do heroi
-    public Stats(HeroBase hero, Weapon weapon, Armor armor)
+    public Stats(HeroBaseSO hero, Weapon weapon, Armor armor)
     {
         Prot = hero.BaseStats.Prot;
         AccMod = hero.BaseStats.AccuracyMod;

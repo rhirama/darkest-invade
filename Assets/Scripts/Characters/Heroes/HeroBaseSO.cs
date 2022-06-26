@@ -4,14 +4,14 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Hero base", menuName = "Darkest Dungeon/Create new Hero", order = 0)]
 
-public class HeroBase : ScriptableObject
+public class HeroBaseSO : ScriptableObject
 {
     [SerializeField] private HeroJob job;
     [SerializeField] private HeroBaseStats baseStats;
     [SerializeField] private Sprite baseSprite;
     [SerializeField] private Sprite icon;
-    [SerializeField] private WeaponSetBase weapons;
-    [SerializeField] private ArmorSetBase armors;
+    [SerializeField] private WeaponSetBaseSO weapons;
+    [SerializeField] private ArmorSetBaseSO armors;
     [SerializeField] private List<SkillBaseSO> skillSet;
 
     [SerializeField] private Resistances _resistances;
@@ -25,11 +25,11 @@ public class HeroBase : ScriptableObject
 
     public HeroBaseStats BaseStats { get => baseStats; }
 
-    public WeaponSetBase Weapons { get => weapons; }
+    public WeaponSetBaseSO Weapons { get => weapons; }
 
     public Resistances Resistances { get => _resistances; }
 
-    public ArmorSetBase Armors { get => armors; }
+    public ArmorSetBaseSO Armors { get => armors; }
 
     public List<SkillBaseSO> SkillSet { get => skillSet; }
     #endregion

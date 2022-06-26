@@ -6,13 +6,13 @@ using UnityEngine;
 public class Hero
 {
     [SerializeField] private string heroName;
-    [SerializeField] private HeroBase heroBase;
+    private HeroBaseSO heroBase;
     [SerializeField] [Range(1, 5)] private int resolveLevel;
     [SerializeField] [Range(1, 5)] private int weaponLevel;
     [SerializeField] [Range(1, 5)] private int armorLevel;
 
-    [SerializeField] private List<SkillBaseSO> skillSet;
-    [SerializeField] private List<int> skillLevel;
+    private List<SkillBaseSO> skillSet;
+    private List<int> skillLevel;
 
     private int hp;
     private int stress;
@@ -21,7 +21,7 @@ public class Hero
     private Resistances resistances;
 
     #region Properties
-    public HeroBase Base { get => heroBase; }
+    public HeroBaseSO Base { get => heroBase; }
 
     public string Name { get => heroName; set => heroName = value; }
 
@@ -44,7 +44,7 @@ public class Hero
     public int Stress { get => stress; set => stress = value; }
     #endregion
 
-    public Hero(HeroBase hBase, int resolveLevel, int weaponLevel, int armorLevel)
+    public Hero(HeroBaseSO hBase, int resolveLevel, int weaponLevel, int armorLevel)
     {
         var weapon = new Weapon(hBase.Weapons, weaponLevel);
         var armor = new Armor(hBase.Armors, armorLevel);
@@ -52,8 +52,8 @@ public class Hero
 
         foreach (SkillBaseSO skillBase in hBase.SkillSet)
         {
-            var skill = new SkillBaseSO();
-            skill = skill.SetSkillLevel(skillBase, resolveLevel);
+            var skill = SkillBaseSO.SetSkillLevel(skillBase, resolveLevel);
+            
             skillSet.Add(skill);
         }
 
@@ -66,6 +66,17 @@ public class Hero
         this.hp = stats.MaxHP;
         this.stress = 0;
     }
+
+    public void CheckSkills()
+    {
+        int i =  0;
+        foreach (SkillBaseSO skill in skillSet)
+        {
+            Debug.Log(skillSet[i].Accuracy);
+            i++;
+
+        }
+    }
 }
 
 public class Armor {
@@ -73,7 +84,7 @@ public class Armor {
     public int MaxHP { get; set; }
     public float Dodge { get; set; }
 
-    public Armor(ArmorSetBase setBase, int armorLevel){
+    public Armor(ArmorSetBaseSO setBase, int armorLevel){
         
         Level = armorLevel;
         MaxHP = setBase.ArmorSet[armorLevel - 1].MaxHP;
@@ -89,7 +100,7 @@ public class Weapon
     public float Crit { get; set; }
     public int Speed { get; set; }
 
-    public Weapon(WeaponSetBase setBase, int weaponLevel)
+    public Weapon(WeaponSetBaseSO setBase, int weaponLevel)
     {
         Level = weaponLevel;
         MinDamage = setBase.WeaponSet[weaponLevel - 1].MinDamage;
