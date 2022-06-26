@@ -10,8 +10,9 @@ public class Teste : MonoBehaviour
     [SerializeField][Range(1, 5)] private int resolveLevel;
     [SerializeField][Range(1, 5)] private int weaponLevel;
     [SerializeField][Range(1, 5)] private int armorLevel;
-
+    [SerializeField] private string heroName;
     [SerializeField] private HeroPanelUI heroPanel;
+    [SerializeField] private BanerPanelUI banerPanel;
 
     private SpriteRenderer image;
 
@@ -22,9 +23,10 @@ public class Teste : MonoBehaviour
 
     public void HandleUpdate()
     {
-        testHero = new Hero(_base, resolveLevel, weaponLevel, armorLevel);
+        testHero = new Hero(_base, resolveLevel, weaponLevel, armorLevel, heroName);
 
         heroPanel.SetHeroPanel(testHero);
+        banerPanel.SetBanerPanel(testHero);
     }
 
 }

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: HellionBase
   m_EditorClassIdentifier: 
   job: 1
-  _name: Hellion
   baseStats:
     prot: 0
     accuracyMod: 0
@@ -24,6 +23,11 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: ec12b18f2a28ce3479ba005b07bd0ac5, type: 3}
   weapons: {fileID: 11400000, guid: 34afbdb2e167f754db5d51d4c332012d, type: 2}
   armors: {fileID: 11400000, guid: 01ff9ab89c3efc240875e1473bf88637, type: 2}
+  skillSet:
+  - {fileID: 11400000, guid: 66bda19e011fc4245af73a1330ef2c77, type: 2}
+  - {fileID: 11400000, guid: 53531d96aa902044398f8be4247e3c18, type: 2}
+  - {fileID: 11400000, guid: 9d3064ef5ea19df4f8453e6081a8b779, type: 2}
+  - {fileID: 11400000, guid: 8ab0b4f970c4df949b77fb75992d2c2e, type: 2}
   _resistances:
     stun: 40
     blight: 40

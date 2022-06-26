@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9899e61b930811544b29ed9b2590eadb, type: 3}
-  m_Name: CrusaderSkillThree
+  m_Name: HellionSkillFour
   m_EditorClassIdentifier: 
-  skillName: Stunning Blow
-  icon: {fileID: 21300000, guid: f816952fe4e857f469d1d3397501e358, type: 3}
+  skillName: If It Bleeds
+  icon: {fileID: 21300000, guid: 398bd13fe1c21ad4bad6794c972b6c45, type: 3}
   range: 0
-  rank: 0100000002000000
+  rank: 010000000200000003000000
   target: 1
-  targetRank: 0100000002000000
-  damageMod: -50
-  accuracy: 90
-  critMod: 0
+  targetRank: 0200000003000000
+  damageMod: -35
+  accuracy: 85
+  critMod: 4
   minDamage: 0
   maxDamage: 0

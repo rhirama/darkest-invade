@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9899e61b930811544b29ed9b2590eadb, type: 3}
-  m_Name: CrusaderSkillThree
+  m_Name: HellionSkillOne
   m_EditorClassIdentifier: 
-  skillName: Stunning Blow
-  icon: {fileID: 21300000, guid: f816952fe4e857f469d1d3397501e358, type: 3}
+  skillName: Wicked Hack
+  icon: {fileID: 21300000, guid: 8df9d634a05f45f4ba679cee0ea672ed, type: 3}
   range: 0
   rank: 0100000002000000
   target: 1
   targetRank: 0100000002000000
-  damageMod: -50
-  accuracy: 90
-  critMod: 0
+  damageMod: 0
+  accuracy: 85
+  critMod: 4
   minDamage: 0
   maxDamage: 0

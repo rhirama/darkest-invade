@@ -46,13 +46,10 @@ public class SkillBaseSO : ScriptableObject
     public int MaxDamage { get => maxDamage; }
     #endregion
 
-    public static SkillBaseSO SetSkillLevel(SkillBaseSO skillBase, int level)
+    public void SetSkillLevel(SkillBaseSO skillBase, int level)
     {
-        var skill = new SkillBaseSO();
+        Accuracy = skillBase.Accuracy + (level - 1) * 5;
+        CritMod = skillBase.CritMod + (level - 1) * 1;
 
-        skill.Accuracy = skillBase.Accuracy + (level - 1) * 5;
-        skill.CritMod = skillBase.CritMod + (level - 1) * 1;
-
-        return skill;
     }
 }

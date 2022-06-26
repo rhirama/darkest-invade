@@ -44,7 +44,7 @@ public class Hero
     public int Stress { get => stress; set => stress = value; }
     #endregion
 
-    public Hero(HeroBaseSO hBase, int resolveLevel, int weaponLevel, int armorLevel)
+    public Hero(HeroBaseSO hBase, int resolveLevel, int weaponLevel, int armorLevel, string heroName)
     {
         var weapon = new Weapon(hBase.Weapons, weaponLevel);
         var armor = new Armor(hBase.Armors, armorLevel);
@@ -52,8 +52,9 @@ public class Hero
 
         foreach (SkillBaseSO skillBase in hBase.SkillSet)
         {
-            var skill = SkillBaseSO.SetSkillLevel(skillBase, resolveLevel);
-            
+            var skill = skillBase;
+            skill.SetSkillLevel(skillBase, resolveLevel);
+
             skillSet.Add(skill);
         }
 
@@ -62,7 +63,7 @@ public class Hero
         this.armorLevel = armorLevel;
         this.heroBase = hBase;
         this.stats = new Stats(hBase, weapon, armor);
-
+        this.Name = heroName;
         this.hp = stats.MaxHP;
         this.stress = 0;
     }

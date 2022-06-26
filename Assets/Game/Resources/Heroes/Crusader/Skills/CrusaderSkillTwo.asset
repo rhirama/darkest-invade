@@ -18,7 +18,7 @@ MonoBehaviour:
   rank: 0100000002000000
   target: 1
   targetRank: 0100000002000000
-  damageMod: 0
+  damageMod: -40
   accuracy: 85
   critMod: -4
   minDamage: 0

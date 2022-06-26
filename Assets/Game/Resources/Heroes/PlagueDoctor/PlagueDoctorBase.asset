@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: PlagueDoctorBase
   m_EditorClassIdentifier: 
   job: 4
-  _name: Plague Doctor
   baseStats:
     prot: 0
     accuracyMod: 0
@@ -24,6 +23,11 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 846e83e2159ad5949908bfbd0ca7fb48, type: 3}
   weapons: {fileID: 11400000, guid: f4709561e3ae1d44aad460bdd185a97d, type: 2}
   armors: {fileID: 11400000, guid: 2c12be092a6a99c4e91b13429e9fe76f, type: 2}
+  skillSet:
+  - {fileID: 11400000, guid: 7444f750c346ac64782121cf50f6a685, type: 2}
+  - {fileID: 11400000, guid: ad24e17edbacaa7479bce914548d9b0b, type: 2}
+  - {fileID: 11400000, guid: ac0ea20d19e8b784cb33996d9086121b, type: 2}
+  - {fileID: 11400000, guid: 174557cf22d44d44ba1155b1b09f5838, type: 2}
   _resistances:
     stun: 20
     blight: 60
