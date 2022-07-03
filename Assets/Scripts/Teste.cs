@@ -5,28 +5,34 @@ using UnityEngine.UI;
 
 public class Teste : MonoBehaviour
 {
-    [SerializeField] public Hero testHero;
-    [SerializeField] private HeroBaseSO _base;
+    [SerializeField] private List<HeroBaseSO> _base;
     [SerializeField][Range(1, 5)] private int resolveLevel;
     [SerializeField][Range(1, 5)] private int weaponLevel;
     [SerializeField][Range(1, 5)] private int armorLevel;
-    [SerializeField] private string heroName;
+    [SerializeField] private List<string> heroNames;
     [SerializeField] private HeroPanelUI heroPanel;
     [SerializeField] private BanerPanelUI banerPanel;
+    [SerializeField] private PartyUI partyUI;
+    [SerializeField] private PlayerPartyData partyData;
 
-    private SpriteRenderer image;
-
-    private void Start()
-    {
+    private void Start() {
         HandleUpdate();
+
     }
 
-    public void HandleUpdate()
-    {
-        testHero = new Hero(_base, resolveLevel, weaponLevel, armorLevel, heroName);
+    public void HandleUpdate() {
 
-        heroPanel.SetHeroPanel(testHero);
-        banerPanel.SetBanerPanel(testHero);
+        partyData.Party = new List<Hero>(4);
+        
+        for (int i = 0; i < 4; i++) {
+
+            partyData.Party.Add(new Hero(_base[i], resolveLevel, weaponLevel, armorLevel, heroNames[i]));
+
+        }
+        
+        partyUI.SetPartyUI(partyData);
+        
+
     }
 
 }
