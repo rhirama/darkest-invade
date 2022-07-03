@@ -68,16 +68,6 @@ public class Hero
         this.stress = 0;
     }
 
-    public void CheckSkills()
-    {
-        int i =  0;
-        foreach (SkillBaseSO skill in skillSet)
-        {
-            Debug.Log(skillSet[i].Accuracy);
-            i++;
-
-        }
-    }
 }
 
 public class Armor {
