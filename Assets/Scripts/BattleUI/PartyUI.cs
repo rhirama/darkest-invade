@@ -5,7 +5,7 @@ using UnityEngine;
 public class PartyUI : MonoBehaviour
 {
     [SerializeField] private List<HeroUI> party;
-    [SerializeField] private int selected = 0; 
+    [SerializeField] private int selected = 0;
     [SerializeField] private PlayerPartyData partyData;
     [SerializeField] private HeroPanelUI heroPanel;
     [SerializeField] private BanerPanelUI banerPanel;

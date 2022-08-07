@@ -15,6 +15,14 @@ public class Teste : MonoBehaviour
     [SerializeField] private PartyUI partyUI;
     [SerializeField] private PlayerPartyData partyData;
 
+    //Enemy status
+    [SerializeField] private List<EnemyBase> enemyBases;
+    [SerializeField] private int enemyLevel;
+    [SerializeField] private EnemyPartyData enemyPartyData;
+    [SerializeField] private EnemyPartyUI enemyPartyUI;
+    
+
+
     private void Start() {
         HandleUpdate();
 
@@ -31,6 +39,17 @@ public class Teste : MonoBehaviour
         }
         
         partyUI.SetPartyUI(partyData);
+
+        enemyPartyData.Party = new List<Enemy>(4);
+        
+        for (int i = 0; i < 4; i++) {
+
+            enemyPartyData.Party.Add(new Enemy(enemyBases[i], enemyLevel));
+            Debug.Log(enemyPartyData.Party.Count);
+
+        }
+        
+        enemyPartyUI.SetEnemyPartyUI(enemyPartyData);
         
 
     }
