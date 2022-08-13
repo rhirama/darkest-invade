@@ -11,6 +11,9 @@ public class DescriptionBox : MonoBehaviour
     [SerializeField]private Camera uiCamera;
     private RectTransform boxPosition; 
     [SerializeField] TextMeshProUGUI textBox;
+    [SerializeField] string stringDeTest;
+    [SerializeField] LayoutElement layoutElement;
+    [SerializeField] private int characterWrapLimit;
 
     private void Start()
     {
@@ -21,36 +24,26 @@ public class DescriptionBox : MonoBehaviour
         instance = this;
         boxPosition = GetComponent<RectTransform>();
 
-        ShowBox("string\r\n" +
-            "de\r\n" +
-            "teste\r\n");
     }
 
     private void Update()
     {
-        Vector2 localPoint;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), Input.mousePosition, uiCamera, out localPoint);
-        boxPosition.localPosition = localPoint;
+        
+
+        //Vector2 localPoint;
+        //RectTransformUtility.ScreenPointToLocalPointInRectangle(transform.parent.GetComponent<RectTransform>(), Input.mousePosition, uiCamera, out localPoint);
+        //boxPosition.localPosition = localPoint;
+
     }
 
-    public void ShowBox(string text)
+    public void SetText(string text)
     {
-        gameObject.SetActive(true);
         textBox.text = text;
+        int contentLenght = textBox.text.Length;
+
+        layoutElement.enabled = (contentLenght > characterWrapLimit) ? true : false;
+
     }
 
-    public void HideBox()
-    {
-        gameObject.SetActive(false);
-    }
 
-    public static void ShowBox_Static(string text)
-    {
-        instance.ShowBox(text);
-    }
-
-    public static void HideBox_Static()
-    {
-        instance.HideBox();
-    }
 }
