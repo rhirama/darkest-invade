@@ -15,6 +15,10 @@ public class HeroPanelUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hpCounter;
     [SerializeField] private TextMeshProUGUI stressCounter;
 
+    private Hero heroSelected;
+
+    public Hero HeroSelected { get => heroSelected; }
+
 
     public void SetHeroPanel(Hero hero)
     {
@@ -33,6 +37,8 @@ public class HeroPanelUI : MonoBehaviour
         statsText[3].text = $"DODGE {hero.Stats.Dodge}";
         statsText[4].text = $"PROT  {hero.Stats.Prot}";
         statsText[5].text = $"SPD   {hero.Stats.Speed}";
+
+        heroSelected = hero;
 
 
 

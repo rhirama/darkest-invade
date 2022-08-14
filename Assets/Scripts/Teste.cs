@@ -40,6 +40,10 @@ public class Teste : MonoBehaviour
         
         partyUI.SetPartyUI(partyData);
 
+        heroPanel.SetHeroPanel(partyData.Party[0]);
+        banerPanel.SetBanerPanel(partyData.Party[0]);
+
+
         enemyPartyData.Party = new List<Enemy>(4);
         
         for (int i = 0; i < 4; i++) {

@@ -20,6 +20,8 @@ public class Hero
     private Stats stats;
     private Resistances resistances;
 
+    private Weapon _weapon;
+
     #region Properties
     public HeroBaseSO Base { get => heroBase; }
 
@@ -28,6 +30,8 @@ public class Hero
     public int ResolveLevel { get => resolveLevel; }
     
     public int WeaponLevel { get => weaponLevel; }
+
+    public Weapon Weapon  { get => _weapon; }
     
     public int ArmorLevel { get => armorLevel; }
     
@@ -50,6 +54,7 @@ public class Hero
         var armor = new Armor(hBase.Armors, armorLevel);
         var skillSet = new List<SkillBaseSO>();
 
+
         foreach (SkillBaseSO skillBase in hBase.SkillSet)
         {
             var skill = skillBase;
@@ -59,6 +64,7 @@ public class Hero
         }
 
         this.skillSet = skillSet;
+        this._weapon = weapon;
         this.weaponLevel = weaponLevel;
         this.armorLevel = armorLevel;
         this.heroBase = hBase;
@@ -85,6 +91,7 @@ public class Armor {
 
 public class Weapon
 {
+    public string Name { get; set; }
     public int Level { get; set; }
     public int MinDamage { get; set; }
     public int MaxDamage { get; set; }
@@ -93,6 +100,7 @@ public class Weapon
 
     public Weapon(WeaponSetBaseSO setBase, int weaponLevel)
     {
+        Name = setBase.WeaponSet[weaponLevel - 1].WeaponName;
         Level = weaponLevel;
         MinDamage = setBase.WeaponSet[weaponLevel - 1].MinDamage;
         MaxDamage = setBase.WeaponSet[weaponLevel - 1].MaxDamage;
