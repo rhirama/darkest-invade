@@ -9,11 +9,15 @@ public class Enemy
     [SerializeField] private EnemyBase _base;
     [SerializeField][Range(0, 2)] private int _level;
     [SerializeField] private List<SkillBaseSO> _skillSet;
+    [SerializeField] private int hp;
 
     private Stats _stats;
     private Resistances _resistances;
 
     #region Properties
+
+    public int Hp { get => hp; }
+
     public EnemyBase Base { get => _base; }
 
     public int Level { get => _level; }
@@ -34,6 +38,7 @@ public class Enemy
         var resistances = enemyBase.Resistances[level];
 
         _stats = stats;
+        hp = stats.MaxHP;
         _resistances = resistances;
 
         var skillSet = new List<SkillBaseSO>();
