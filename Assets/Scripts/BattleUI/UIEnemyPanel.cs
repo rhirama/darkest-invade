@@ -22,7 +22,7 @@ public class UIEnemyPanel : MonoBehaviour
         monsterType.text = enemy.Base.EnemyType.ToString();
         Debug.Log(enemy.Hp);
         Debug.Log(enemy.Stats);
-        hpCounter.text = $"{enemy.Hp} / {enemy.Hp}";
+        hpCounter.text = $"{enemy.Hp} / {enemy.Stats.MaxHP}";
         dodgeValue.text = $"DODGE {enemy.Stats.Dodge}";
         speedValue.text = $"SPEED {enemy.Stats.Speed}";
         rStun.text = enemy.Resistances.Stun.ToString() + "%";
