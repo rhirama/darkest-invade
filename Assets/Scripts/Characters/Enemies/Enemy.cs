@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class Enemy
 {
-    [SerializeField] private EnemyBase _base;
+    [SerializeField] private EnemyBaseSO _base;
     [SerializeField][Range(0, 2)] private int _level;
     [SerializeField] private List<SkillBaseSO> _skillSet;
 
+    private int hp;
     private Stats _stats;
     private Resistances _resistances;
 
     #region Properties
-    public EnemyBase Base { get => _base; }
+    public EnemyBaseSO Base { get => _base; }
 
     public int Level { get => _level; }
 
@@ -23,9 +24,10 @@ public class Enemy
     public Resistances Resistances { get => _resistances; }
 
     public List<SkillBaseSO> SkillSet { get => _skillSet; }
+    public int Hp { get => hp; }
     #endregion
 
-    public Enemy(EnemyBase enemyBase, int level)
+    public Enemy(EnemyBaseSO enemyBase, int level)
     {
         _base = enemyBase;
         _level = level;
@@ -44,5 +46,6 @@ public class Enemy
         }
 
         _skillSet = skillSet;
+        hp = stats.MaxHP;
     }
 }

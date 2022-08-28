@@ -10,16 +10,21 @@ public class Teste : MonoBehaviour
     [SerializeField][Range(1, 5)] private int weaponLevel;
     [SerializeField][Range(1, 5)] private int armorLevel;
     [SerializeField] private List<string> heroNames;
-    [SerializeField] private HeroPanelUI heroPanel;
-    [SerializeField] private BanerPanelUI banerPanel;
+    [SerializeField] private BattleHudManager battleHudManager;
+    [SerializeField] private BattleSystem battleSystem;
     [SerializeField] private PartyUI partyUI;
     [SerializeField] private PlayerPartyData partyData;
 
     //Enemy status
-    [SerializeField] private List<EnemyBase> enemyBases;
+    [SerializeField] private List<EnemyBaseSO> enemyBases;
     [SerializeField] private int enemyLevel;
     [SerializeField] private EnemyPartyData enemyPartyData;
     [SerializeField] private EnemyPartyUI enemyPartyUI;
+
+    //Setup
+
+
+
     
 
 
@@ -32,29 +37,23 @@ public class Teste : MonoBehaviour
 
         partyData.Party = new List<Hero>(4);
         
-        for (int i = 0; i < 4; i++) {
-
+        for (int i = 0; i < 4; i++) 
+        {
             partyData.Party.Add(new Hero(_base[i], resolveLevel, weaponLevel, armorLevel, heroNames[i]));
-
         }
         
-        partyUI.SetPartyUI(partyData);
-
-        heroPanel.SetHeroPanel(partyData.Party[0]);
-        banerPanel.SetBanerPanel(partyData.Party[0]);
+        //battleHudManager.SetHud(partyData.Party[battleSystem.ActiveCharacter]);
 
 
         enemyPartyData.Party = new List<Enemy>(4);
         
-        for (int i = 0; i < 4; i++) {
-
+        for (int i = 0; i < 4; i++) 
+        {
             enemyPartyData.Party.Add(new Enemy(enemyBases[i], enemyLevel));
-            Debug.Log(enemyPartyData.Party.Count);
-
         }
         
-        enemyPartyUI.SetEnemyPartyUI(enemyPartyData);
-        
+
+        battleSystem.SetBattle(partyData, enemyPartyData);
 
     }
 

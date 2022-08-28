@@ -15,6 +15,13 @@ public class HeroPanelUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI hpCounter;
     [SerializeField] private TextMeshProUGUI stressCounter;
 
+    //==============================================================================
+    //                                 Tooltips
+    //==============================================================================
+
+    [SerializeField] private DescritptionBoxTrigger weapon;
+
+
     private Hero heroSelected;
 
     public Hero HeroSelected { get => heroSelected; }
@@ -40,8 +47,12 @@ public class HeroPanelUI : MonoBehaviour
 
         heroSelected = hero;
 
+        SetTooltips(hero);
+    }
 
-
+    public void SetTooltips(Hero hero)
+    {
+        weapon.SetTooltipObject(hero.Weapon);
     }
 
 }

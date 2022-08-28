@@ -76,20 +76,24 @@ public class Hero
 
 }
 
-public class Armor {
+public class Armor 
+{
+
+    public string Name { get; set; }
     public int Level { get; set; }
     public int MaxHP { get; set; }
     public float Dodge { get; set; }
 
     public Armor(ArmorSetBaseSO setBase, int armorLevel){
-        
+
+        Name = setBase.ArmorSet[armorLevel - 1].ArmorName;
         Level = armorLevel;
         MaxHP = setBase.ArmorSet[armorLevel - 1].MaxHP;
         Dodge = setBase.ArmorSet[armorLevel - 1].Dodge;
     }
 }
 
-public class Weapon
+public class Weapon : IHaveTooltip
 {
     public string Name { get; set; }
     public int Level { get; set; }
@@ -109,4 +113,13 @@ public class Weapon
 
     }
 
+    public string BuildTooltipText()
+    {
+        string text = $"{this.Name}" +
+            $"\nDMG base: {this.MinDamage} - {this.MaxDamage}" +
+            $"\nCRIT base: {this.Crit} %" +
+            $"\nSPD base: {this.Speed}";
+
+        return text;
+    }
 }

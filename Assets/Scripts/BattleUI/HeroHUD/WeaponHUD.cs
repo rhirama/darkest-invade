@@ -17,8 +17,10 @@ public class WeaponHUD : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             $"{heroPanel.HeroSelected.Weapon.Name}"+
             $"\nDMG base: {heroPanel.HeroSelected.Weapon.MinDamage} - {heroPanel.HeroSelected.Weapon.MaxDamage}"+
             $"\nCRIT base: {heroPanel.HeroSelected.Weapon.Crit} %"+
-            $"\nSPD base: {heroPanel.HeroSelected.Weapon.Speed}"
+            $"\nSPD base: {heroPanel.HeroSelected.Weapon.Speed}",
+            this.GetComponent<RectTransform>()
         );
+
     }
 
     public void OnPointerExit(PointerEventData eventData)

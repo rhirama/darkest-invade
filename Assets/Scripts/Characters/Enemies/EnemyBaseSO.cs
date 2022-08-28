@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Enemy base", menuName = "Darkest Dungeon/Create new Enemy", order = 0)]
 
-public class EnemyBase : ScriptableObject
+public class EnemyBaseSO : ScriptableObject
 {
     [SerializeField] private string enemyName;
     [SerializeField] private List<EnemyBaseStats> baseStats;
