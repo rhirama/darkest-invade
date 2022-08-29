@@ -838,6 +838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroSprite: {fileID: 104493029}
   selectedIcon: {fileID: 459933822}
+  battleSystem: {fileID: 2041874548}
+  slot: 3
 --- !u!114 &104493029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,10 +1381,10 @@ RectTransform:
   m_Father: {fileID: 819853337}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -10}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283660125
 MonoBehaviour:
@@ -1590,10 +1592,10 @@ RectTransform:
   m_Father: {fileID: 976573039}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -108}
+  m_SizeDelta: {x: 24, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &309846514
 MonoBehaviour:
@@ -1666,10 +1668,10 @@ RectTransform:
   m_Father: {fileID: 819853337}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -83.5}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311836784
 MonoBehaviour:
@@ -2205,10 +2207,10 @@ RectTransform:
   m_Father: {fileID: 976573039}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -12}
+  m_SizeDelta: {x: 24, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &391413124
 MonoBehaviour:
@@ -2550,18 +2552,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   party:
   - heroName: 
+    heroBase: {fileID: 0}
     resolveLevel: 0
     weaponLevel: 0
     armorLevel: 0
   - heroName: 
+    heroBase: {fileID: 0}
     resolveLevel: 0
     weaponLevel: 0
     armorLevel: 0
   - heroName: 
+    heroBase: {fileID: 0}
     resolveLevel: 0
     weaponLevel: 0
     armorLevel: 0
   - heroName: 
+    heroBase: {fileID: 0}
     resolveLevel: 0
     weaponLevel: 0
     armorLevel: 0
@@ -2702,10 +2708,10 @@ RectTransform:
   m_Father: {fileID: 819853337}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -59}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &464992230
 MonoBehaviour:
@@ -2858,6 +2864,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 477283830}
   selectedIcon: {fileID: 1678699694}
+  enemyPanel: {fileID: 917902702}
+  _enemy:
+    _base: {fileID: 0}
+    _level: 0
+    _skillSet: []
+    hp: 0
 --- !u!114 &477283830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4102,7 +4114,7 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 2
   m_StartCorner: 1
   m_StartAxis: 0
   m_CellSize: {x: 200, y: 600}
@@ -4328,7 +4340,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &917902699
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4451,10 +4463,10 @@ RectTransform:
   m_Father: {fileID: 976573039}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -84}
+  m_SizeDelta: {x: 24, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &931351033
 MonoBehaviour:
@@ -4527,10 +4539,10 @@ RectTransform:
   m_Father: {fileID: 976573039}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -36}
+  m_SizeDelta: {x: 24, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &973173589
 MonoBehaviour:
@@ -5053,7 +5065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5131,6 +5143,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroSprite: {fileID: 1033041437}
   selectedIcon: {fileID: 1602592469}
+  battleSystem: {fileID: 2041874548}
+  slot: 0
 --- !u!114 &1033041437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5495,6 +5509,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroSprite: {fileID: 1082416684}
   selectedIcon: {fileID: 1353333518}
+  battleSystem: {fileID: 2041874548}
+  slot: 2
 --- !u!114 &1082416684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5566,10 +5582,10 @@ RectTransform:
   m_Father: {fileID: 851931342}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -59}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090122133
 MonoBehaviour:
@@ -5720,7 +5736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5777,10 +5793,10 @@ RectTransform:
   m_Father: {fileID: 851931342}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -108}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1163870947
 MonoBehaviour:
@@ -6032,7 +6048,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -6663,10 +6679,10 @@ RectTransform:
   m_Father: {fileID: 851931342}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -34.5}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355771330
 MonoBehaviour:
@@ -7069,6 +7085,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 1533546558}
   selectedIcon: {fileID: 1117185199}
+  enemyPanel: {fileID: 917902702}
+  _enemy:
+    _base: {fileID: 0}
+    _level: 0
+    _skillSet: []
+    hp: 0
 --- !u!114 &1533546558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7228,6 +7250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroSprite: {fileID: 1584839777}
   selectedIcon: {fileID: 199657407}
+  battleSystem: {fileID: 2041874548}
+  slot: 1
 --- !u!114 &1584839777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7375,10 +7399,10 @@ RectTransform:
   m_Father: {fileID: 819853337}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -108}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1659018904
 MonoBehaviour:
@@ -7529,7 +7553,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -7586,10 +7610,10 @@ RectTransform:
   m_Father: {fileID: 976573039}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 12, y: -60}
+  m_SizeDelta: {x: 24, y: 24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1707301581
 MonoBehaviour:
@@ -7873,10 +7897,10 @@ RectTransform:
   m_Father: {fileID: 819853337}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -34.5}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1711831844
 MonoBehaviour:
@@ -8325,6 +8349,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 1783504554}
   selectedIcon: {fileID: 1258311804}
+  enemyPanel: {fileID: 917902702}
+  _enemy:
+    _base: {fileID: 0}
+    _level: 0
+    _skillSet: []
+    hp: 0
 --- !u!114 &1783504554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8549,7 +8579,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2d0c854c463d9e246abfaa8281ed197b, type: 2}
   - {fileID: 11400000, guid: 2d0c854c463d9e246abfaa8281ed197b, type: 2}
   - {fileID: 11400000, guid: 2d0c854c463d9e246abfaa8281ed197b, type: 2}
-  enemyLevel: 2
+  enemyLevel: 1
   enemyPartyData: {fileID: 443636214}
   enemyPartyUI: {fileID: 1443706069}
   enemyPanel: {fileID: 917902702}
@@ -8601,10 +8631,10 @@ RectTransform:
   m_Father: {fileID: 851931342}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -10}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1865966964
 MonoBehaviour:
@@ -8871,10 +8901,10 @@ RectTransform:
   m_Father: {fileID: 851931342}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -83.5}
+  m_SizeDelta: {x: 100, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1953839860
 MonoBehaviour:
@@ -9027,6 +9057,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 1987961680}
   selectedIcon: {fileID: 1014778058}
+  enemyPanel: {fileID: 917902702}
+  _enemy:
+    _base: {fileID: 0}
+    _level: 0
+    _skillSet: []
+    hp: 0
 --- !u!114 &1987961680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9335,7 +9371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d642e830b669404785de0cc52326ddf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeCharacter: 3
+  activeCharacter: 0
   partyUI: {fileID: 837900538}
   enemyPartyUI: {fileID: 1443706069}
 --- !u!1 &2042873104

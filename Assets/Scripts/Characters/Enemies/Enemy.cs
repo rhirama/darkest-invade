@@ -10,13 +10,10 @@ public class Enemy
     [SerializeField][Range(0, 2)] private int _level;
     [SerializeField] private List<SkillBaseSO> _skillSet;
     [SerializeField] private int hp;
-
-    private int hp;
     private Stats _stats;
     private Resistances _resistances;
 
     #region Properties
-    
     public EnemyBaseSO Base { get => _base; }
     
     public int Level { get => _level; }

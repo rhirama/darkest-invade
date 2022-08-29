@@ -41,23 +41,14 @@ public class Teste : MonoBehaviour
             partyData.Party.Add(new Hero(_base[i], resolveLevel, weaponLevel, armorLevel, heroNames[i]));
         }
         
-        //battleHudManager.SetHud(partyData.Party[battleSystem.ActiveCharacter]);
-
-
-
-        heroPanel.SetHeroPanel(partyData.Party[0]);
-        banerPanel.SetBanerPanel(partyData.Party[0]);
-
         enemyPartyData.Party = new List<Enemy>(0);
         
         for (int i = 0; i < 4; i++) 
         {
             enemyPartyData.Party.Add(new Enemy(enemyBases[i], enemyLevel));
         }
-        
 
         battleSystem.SetBattle(partyData, enemyPartyData);
-
 
     }
 

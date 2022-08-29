@@ -4,12 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-
-
-public class HeroUI : MonoBehaviour
+public class HeroUI : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Image heroSprite;
     [SerializeField] private GameObject selectedIcon;
+    [SerializeField] private BattleSystem battleSystem;
+    [SerializeField] private int slot;
     private Hero _hero;
 
     public Hero Hero { get => _hero; }
@@ -29,5 +29,9 @@ public class HeroUI : MonoBehaviour
     {
         selectedIcon.SetActive(false);
     }
-    
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        battleSystem.ChangeActiveCharacter(slot);
+    }
 }

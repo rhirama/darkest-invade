@@ -8,7 +8,6 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] private PartyUI partyUI;
     [SerializeField] private EnemyPartyUI enemyPartyUI;
 
-
     public int ActiveCharacter { get => activeCharacter; }
 
     public void SetBattle(PlayerPartyData playerData, EnemyPartyData enemyData)
@@ -18,4 +17,9 @@ public class BattleSystem : MonoBehaviour
         partyUI.SetSelectedUI(activeCharacter);
     }
 
+    public void ChangeActiveCharacter(int active)
+    {
+        activeCharacter = active;
+        partyUI.SetSelectedUI(activeCharacter);
+    }
 }

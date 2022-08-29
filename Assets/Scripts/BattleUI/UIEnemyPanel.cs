@@ -20,8 +20,6 @@ public class UIEnemyPanel : MonoBehaviour
     {
         monsterName.text = enemy.Base.EnemyName;
         monsterType.text = enemy.Base.EnemyType.ToString();
-        Debug.Log(enemy.Hp);
-        Debug.Log(enemy.Stats);
         hpCounter.text = $"{enemy.Hp} / {enemy.Stats.MaxHP}";
         dodgeValue.text = $"DODGE {enemy.Stats.Dodge}";
         speedValue.text = $"SPEED {enemy.Stats.Speed}";
@@ -29,7 +27,6 @@ public class UIEnemyPanel : MonoBehaviour
         rBlight.text = enemy.Resistances.Blight.ToString() + "%";
         rBleed.text = enemy.Resistances.Bleed.ToString() + "%";
         rMove.text = enemy.Resistances.Move.ToString() + "%";
-
     }
 
 }
