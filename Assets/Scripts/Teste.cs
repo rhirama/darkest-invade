@@ -20,32 +20,35 @@ public class Teste : MonoBehaviour
     [SerializeField] private int enemyLevel;
     [SerializeField] private EnemyPartyData enemyPartyData;
     [SerializeField] private EnemyPartyUI enemyPartyUI;
-
     //Setup
 
 
+    [SerializeField] private UIEnemyPanel enemyPanel;
 
-    
-
-
-    private void Start() {
+    private void Start()
+    {
         HandleUpdate();
 
     }
 
-    public void HandleUpdate() {
-
-        partyData.Party = new List<Hero>(4);
+    public void HandleUpdate()
+    {
+        partyData.Party = new List<Hero>(0);
         
         for (int i = 0; i < 4; i++) 
         {
+
             partyData.Party.Add(new Hero(_base[i], resolveLevel, weaponLevel, armorLevel, heroNames[i]));
         }
         
         //battleHudManager.SetHud(partyData.Party[battleSystem.ActiveCharacter]);
 
 
-        enemyPartyData.Party = new List<Enemy>(4);
+
+        heroPanel.SetHeroPanel(partyData.Party[0]);
+        banerPanel.SetBanerPanel(partyData.Party[0]);
+
+        enemyPartyData.Party = new List<Enemy>(0);
         
         for (int i = 0; i < 4; i++) 
         {
@@ -55,6 +58,8 @@ public class Teste : MonoBehaviour
 
         battleSystem.SetBattle(partyData, enemyPartyData);
 
+
     }
+
 
 }
