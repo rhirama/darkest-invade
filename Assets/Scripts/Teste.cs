@@ -20,38 +20,45 @@ public class Teste : MonoBehaviour
     [SerializeField] private int enemyLevel;
     [SerializeField] private EnemyPartyData enemyPartyData;
     [SerializeField] private EnemyPartyUI enemyPartyUI;
-    
 
+    [SerializeField] private UIEnemyPanel enemyPanel;
 
-    private void Start() {
+    private void Start()
+    {
         HandleUpdate();
 
     }
 
-    public void HandleUpdate() {
+    public void HandleUpdate()
+    {
 
         partyData.Party = new List<Hero>(4);
-        
-        for (int i = 0; i < 4; i++) {
+
+        for (int i = 0; i < 4; i++)
+        {
 
             partyData.Party.Add(new Hero(_base[i], resolveLevel, weaponLevel, armorLevel, heroNames[i]));
 
         }
-        
+
         partyUI.SetPartyUI(partyData);
 
         enemyPartyData.Party = new List<Enemy>(4);
-        
-        for (int i = 0; i < 4; i++) {
+
+        for (int i = 0; i < 4; i++)
+        {
 
             enemyPartyData.Party.Add(new Enemy(enemyBases[i], enemyLevel));
             Debug.Log(enemyPartyData.Party.Count);
 
         }
-        
+
         enemyPartyUI.SetEnemyPartyUI(enemyPartyData);
+
+        enemyPanel.SetEnemyPanel(enemyPartyData.Party[0]);
         
 
     }
+
 
 }
