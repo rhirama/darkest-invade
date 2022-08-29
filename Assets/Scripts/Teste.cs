@@ -31,8 +31,7 @@ public class Teste : MonoBehaviour
 
     public void HandleUpdate()
     {
-
-        partyData.Party = new List<Hero>(4);
+        partyData.Party = new List<Hero>(0);
 
         for (int i = 0; i < 4; i++)
         {
@@ -43,16 +42,18 @@ public class Teste : MonoBehaviour
 
         partyUI.SetPartyUI(partyData);
 
-        enemyPartyData.Party = new List<Enemy>(4);
+        heroPanel.SetHeroPanel(partyData.Party[0]);
+        banerPanel.SetBanerPanel(partyData.Party[0]);
 
-        for (int i = 0; i < 4; i++)
-        {
+        enemyPartyData.Party = new List<Enemy>(0);
+        
+        for (int i = 0; i < 4; i++) {
 
             enemyPartyData.Party.Add(new Enemy(enemyBases[i], enemyLevel));
             Debug.Log(enemyPartyData.Party.Count);
 
         }
-
+        
         enemyPartyUI.SetEnemyPartyUI(enemyPartyData);
 
         enemyPanel.SetEnemyPanel(enemyPartyData.Party[0]);

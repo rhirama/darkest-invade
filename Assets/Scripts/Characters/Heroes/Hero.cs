@@ -6,7 +6,7 @@ using UnityEngine;
 public class Hero
 {
     [SerializeField] private string heroName;
-    private HeroBaseSO heroBase;
+    [SerializeField] private HeroBaseSO heroBase;
     [SerializeField] [Range(1, 5)] private int resolveLevel;
     [SerializeField] [Range(1, 5)] private int weaponLevel;
     [SerializeField] [Range(1, 5)] private int armorLevel;
