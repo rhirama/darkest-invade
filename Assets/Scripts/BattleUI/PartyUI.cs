@@ -5,20 +5,16 @@ using UnityEngine;
 public class PartyUI : MonoBehaviour
 {
     [SerializeField] private List<HeroUI> party;
-    [SerializeField] private int selected = 0;
-    [SerializeField] private PlayerPartyData partyData;
-    [SerializeField] private HeroPanelUI heroPanel;
-    [SerializeField] private BanerPanelUI banerPanel;
+    [SerializeField] private BattleHudManager battleHudManager;
 
 
     public void SetPartyUI (PlayerPartyData partyData) {
 
         int i=0;
         
-        foreach(Hero hero in partyData.Party) {
-            
-            party[i].SetHeroUI(hero);
-
+        foreach(Hero hero in partyData.Party) 
+        {
+            party[i].SetHero(hero);
             i++;
         }
 
@@ -26,8 +22,19 @@ public class PartyUI : MonoBehaviour
 
     public void SetSelectedUI(int selected) {
 
-        banerPanel.SetBanerPanel(partyData.Party[selected]);
-        heroPanel.SetHeroPanel(partyData.Party[selected]);
+        for (int i = 0; i < 4; i++)
+        {
+            if (i != selected)
+            {
+                party[i].NotSelected();
+            }
+            else
+            {
+                battleHudManager.SetHud(party[selected]);
+                party[selected].Selected();
+            }
+        }
+        
     } 
 
 }

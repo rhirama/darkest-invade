@@ -6,40 +6,28 @@ using UnityEngine.EventSystems;
 
 
 
-public class HeroUI : MonoBehaviour , IPointerDownHandler , IPointerUpHandler
+public class HeroUI : MonoBehaviour
 {
     [SerializeField] private Image heroSprite;
     [SerializeField] private GameObject selectedIcon;
+    private Hero _hero;
 
-    public void OnPointerDown(PointerEventData eventData)
+    public Hero Hero { get => _hero; }
+
+    public void SetHero (Hero hero) 
     {
-        Selected();
-        
-    }
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        NotSelected();
-    }
-
-
-
-
-    public void SetHeroUI (Hero hero) {
         heroSprite.sprite = hero.Base.BaseSprite;
-
+        _hero = hero;
     }
 
-    public void Selected () {
-
+    public void Selected () 
+    {
         selectedIcon.SetActive(true);
-
     }
 
-    public void NotSelected () {
-
+    public void NotSelected () 
+    {
         selectedIcon.SetActive(false);
-
     }
     
 }

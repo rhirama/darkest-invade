@@ -31,7 +31,7 @@ public class Stats
     }
     
     // Construtor dos satatus do inimigo
-    public Stats(EnemyBase enemy, int level)
+    public Stats(EnemyBaseSO enemy, int level)
     {
         MaxHP = enemy.BaseStats[level].MaxHP;
         Prot = enemy.BaseStats[level].Prot;

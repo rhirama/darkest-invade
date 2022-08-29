@@ -20,6 +20,8 @@ public class Hero
     private Stats stats;
     private Resistances resistances;
 
+    private Weapon _weapon;
+
     #region Properties
     public HeroBaseSO Base { get => heroBase; }
 
@@ -28,6 +30,8 @@ public class Hero
     public int ResolveLevel { get => resolveLevel; }
     
     public int WeaponLevel { get => weaponLevel; }
+
+    public Weapon Weapon  { get => _weapon; }
     
     public int ArmorLevel { get => armorLevel; }
     
@@ -50,6 +54,7 @@ public class Hero
         var armor = new Armor(hBase.Armors, armorLevel);
         var skillSet = new List<SkillBaseSO>();
 
+
         foreach (SkillBaseSO skillBase in hBase.SkillSet)
         {
             var skill = skillBase;
@@ -59,6 +64,7 @@ public class Hero
         }
 
         this.skillSet = skillSet;
+        this._weapon = weapon;
         this.weaponLevel = weaponLevel;
         this.armorLevel = armorLevel;
         this.heroBase = hBase;
@@ -70,21 +76,26 @@ public class Hero
 
 }
 
-public class Armor {
+public class Armor 
+{
+
+    public string Name { get; set; }
     public int Level { get; set; }
     public int MaxHP { get; set; }
     public float Dodge { get; set; }
 
     public Armor(ArmorSetBaseSO setBase, int armorLevel){
-        
+
+        Name = setBase.ArmorSet[armorLevel - 1].ArmorName;
         Level = armorLevel;
         MaxHP = setBase.ArmorSet[armorLevel - 1].MaxHP;
         Dodge = setBase.ArmorSet[armorLevel - 1].Dodge;
     }
 }
 
-public class Weapon
+public class Weapon : IHaveTooltip
 {
+    public string Name { get; set; }
     public int Level { get; set; }
     public int MinDamage { get; set; }
     public int MaxDamage { get; set; }
@@ -93,6 +104,7 @@ public class Weapon
 
     public Weapon(WeaponSetBaseSO setBase, int weaponLevel)
     {
+        Name = setBase.WeaponSet[weaponLevel - 1].WeaponName;
         Level = weaponLevel;
         MinDamage = setBase.WeaponSet[weaponLevel - 1].MinDamage;
         MaxDamage = setBase.WeaponSet[weaponLevel - 1].MaxDamage;
@@ -101,4 +113,13 @@ public class Weapon
 
     }
 
+    public string BuildTooltipText()
+    {
+        string text = $"{this.Name}" +
+            $"\nDMG base: {this.MinDamage} - {this.MaxDamage}" +
+            $"\nCRIT base: {this.Crit} %" +
+            $"\nSPD base: {this.Speed}";
+
+        return text;
+    }
 }

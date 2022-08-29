@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a63757cb2aa2bea43a84ad99914cc086, type: 3}
+  m_Script: {fileID: 11500000, guid: 9e04f7cb9751f6f4ab588d0cf55aca8d, type: 3}
   m_Name: BoneSoldierBase
   m_EditorClassIdentifier: 
   enemyName: Bone Soldier

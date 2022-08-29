@@ -32,7 +32,7 @@ public class Resistances
     public int Trap { get; set; }
     #endregion
 
-    public void levelResistances(int levelUp)
+    public void LevelResistances(int levelUp)
     {
         this.Stun += (levelUp * 10);
         this.Blight += (levelUp * 10);
